@@ -27,7 +27,7 @@ const contents = [
   },
   {
     bullet: '2',
-    path: '/about',
+    path: '/about/',
     name: 'About',
     lastUpdate: '22th November',
   },
