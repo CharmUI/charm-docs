@@ -1,20 +1,3 @@
-import Main from './main.mdx';
-
-const rewritedComponents = {
-  h1: (props) => {
-    const { children } = props;
-
-    return (
-      <h1 {...props}>
-        { children }
-        <p className="lead text--light margin-top--1">
-          This page is an overview of the React documentation and related resources.
-        </p>
-      </h1>
-    );
-  },
-};
-
 const contents = [
   {
     bullet: '1',
@@ -41,14 +24,12 @@ const contents = [
         ],
       },
     ],
-    component: <Main components={rewritedComponents} />,
   },
   {
     bullet: '2',
     path: '/about',
     name: 'About',
     lastUpdate: '22th November',
-    component: <Main components={rewritedComponents} />,
   },
 ];
 

@@ -1,22 +1,22 @@
-import { memo } from 'react';
-import { NavLink } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
-function Link({
+function MainLink({
   path,
   name,
   exact,
 }) {
   return (
     <li className="list-item--style-none">
-      <NavLink
+      <Link
         to={path}
         exact={exact || false}
         className="link_main"
         activeClassName="is-active"
       >
         { name }
-      </NavLink>
+      </Link>
     </li>
   );
 }
@@ -27,13 +27,13 @@ function HashLink({
 }) {
   return (
     <li>
-      <NavHashLink
+      <Link
         to={path}
         className="link_main link_small"
         activeClassName="is-active"
       >
         { name }
-      </NavHashLink>
+      </Link>
     </li>
   );
 }
@@ -48,13 +48,13 @@ HashLink.propTypes = {
   name: PropTypes.string,
 };
 
-Link.defaultProps = {
+MainLink.defaultProps = {
   path: null,
   name: null,
   exact: false,
 };
 
-Link.propTypes = {
+MainLink.propTypes = {
   path: PropTypes.string,
   name: PropTypes.string,
   exact: PropTypes.bool,
@@ -63,5 +63,5 @@ Link.propTypes = {
 export default function (isHashed = false) {
   return isHashed
     ? memo(HashLink)
-    : memo(Link);
+    : memo(MainLink);
 }
