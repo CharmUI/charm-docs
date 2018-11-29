@@ -8,6 +8,12 @@ module.exports = {
   pathPrefix: "/charm-docs",
   plugins: [
     {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./static/favicon.png",
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
     },
     {

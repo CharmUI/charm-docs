@@ -6,17 +6,10 @@ import { MDXProvider } from "@mdx-js/tag";
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
+import { Layout } from 'charm-ui/dist/esm/layout';
 
-import {
-  Layout,
-  Footer,
-  Aside,
-  Nav,
-  List,
-} from 'charm-ui/dist/esm/layout';
-
-import getLink from './Link';
-
+import Logo from '../static/logo.png';
+import Link from './Link';
 import contents from '../content/contents';
 
 import {
@@ -25,8 +18,6 @@ import {
   getCurrentContentIndex,
 } from '../helpers';
 
-
-console.log(process.env.NODE_ENV)
 const rewritedComponents = {
   h1: (props) => {
     const { children } = props;
@@ -48,42 +39,19 @@ function App({ children, location }) {
   const prevRoute = contents[currentContentIndex - 1];
   const nextRoute = contents[currentContentIndex + 1];
 
-  const LayoutAside = (
-    <Aside
-      logo={'Charm UI'}
-      nav={(
-        <List
-          links={getUpdatedContent(contents, location)}
-          LinkComponent={getLink()}
-          HashLinkComponent={getLink(true)}
-        />
-      )}
-    />
-  );
-
-  const LayoutNav = (
-    <Nav
-      title={currentRoute.name}
-      lastUpdate={currentRoute.lastUpdate}
-      version={'0.5.1'}
-    />
-  );
-
-  const LayoutFooter = (
-    <Footer
-      prevRoute={prevRoute}
-      nextRoute={nextRoute}
-      onClickHandler={path => navigate(path)}
-    />
-  );
   return (
     <MDXProvider
       components={rewritedComponents}  
     >
       <Layout
-        aside={LayoutAside}
-        nav={LayoutNav}
-        footer={LayoutFooter}
+        link={Link}
+        logo={<img style={{ maxWidth: 125 }} src={Logo} alt="logo" />}
+        listContents={getUpdatedContent(contents, location)}
+        currentRoute={currentRoute}
+        nextRoute={nextRoute}
+        prevRoute={prevRoute}
+        version={'0.5.5'}
+        onFooterLinkClick={path => navigate(path)}
       >
         { children }
       </Layout>

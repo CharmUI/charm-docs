@@ -6,62 +6,32 @@ function MainLink({
   path,
   name,
   exact,
+  className,
 }) {
   return (
-    <li className="list-item--style-none">
-      <Link
-        to={path}
-        exact={exact || false}
-        className="link_main"
-        activeClassName="is-active"
-      >
-        { name }
-      </Link>
-    </li>
+    <Link
+      to={path}
+      exact={exact || false}
+      className={ `link_main ${className}` }
+      activeClassName="is-active"
+    >
+      { name }
+    </Link>
   );
 }
-
-function HashLink({
-  path,
-  name,
-}) {
-  return (
-    <li>
-      <Link
-        to={path}
-        className="link_main link_small"
-        activeClassName="is-active"
-      >
-        { name }
-      </Link>
-    </li>
-  );
-}
-
-HashLink.defaultProps = {
-  path: null,
-  name: null,
-};
-
-HashLink.propTypes = {
-  path: PropTypes.string,
-  name: PropTypes.string,
-};
 
 MainLink.defaultProps = {
   path: null,
   name: null,
   exact: false,
+  className:'',
 };
 
 MainLink.propTypes = {
   path: PropTypes.string,
   name: PropTypes.string,
   exact: PropTypes.bool,
+  className: PropTypes.string,
 };
 
-export default function (isHashed = false) {
-  return isHashed
-    ? memo(HashLink)
-    : memo(MainLink);
-}
+export default memo(MainLink);
