@@ -25,6 +25,8 @@ import {
   getCurrentContentIndex,
 } from '../helpers';
 
+
+console.log(process.env.NODE_ENV)
 const rewritedComponents = {
   h1: (props) => {
     const { children } = props;

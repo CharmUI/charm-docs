@@ -1,19 +1,26 @@
-export function getUpdatedContent(contents, location, prefix = '/charm-docs') {
+function getPath(location) {
+  const isDev = process.env.NODE_ENV === 'development';
+
+  return isDev
+    ? location.pathname
+    : location.pathname.split('/charm-docs')[1];
+}
+export function getUpdatedContent(contents, location) {
   return contents.map(content => Object.assign({}, content, {
-    isCurrentPath: location.pathname.split(prefix)[1] === content.path,
+    isCurrentPath: getPath(location) === content.path,
   }));
 }
 
-export function getCurrentRoute(contents, location, prefix = '/charm-docs') {
+export function getCurrentRoute(contents, location) {
   return contents.reduce((acc, content) => {
-    if (content.path === location.pathname.split(prefix)[1]) return Object.assign({}, acc, content);
+    if (content.path === getPath(location)) return Object.assign({}, acc, content);
     return acc;
   }, {});
 }
 
-export function getCurrentContentIndex(contents, location, prefix = '/charm-docs') {
+export function getCurrentContentIndex(contents, location) {
   return contents.reduce((acc, content, i) => {
-    if (content.path === location.pathname.split(prefix)[1]) return i;
+    if (content.path === getPath(location)) return i;
     return acc;
   }, null);
 }
