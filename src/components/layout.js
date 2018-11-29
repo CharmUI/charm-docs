@@ -40,7 +40,7 @@ const rewritedComponents = {
   },
 };
 
-function App({ children, location }) {
+function App({ children, location = window.location }) {
   const currentContentIndex = getCurrentContentIndex(contents, location);
   const currentRoute = getCurrentRoute(contents, location);
   const prevRoute = contents[currentContentIndex - 1];

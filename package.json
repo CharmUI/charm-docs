@@ -24,8 +24,7 @@
     "@mdx-js/mdx": "^0.16.5",
     "@mdx-js/tag": "^0.16.1",
     "gatsby-mdx": "^0.2.0",
-    "gatsby-transformer-remark": "^2.1.13",
-    "gh-pages": "^2.0.1"
+    "gatsby-transformer-remark": "^2.1.13"
   },
   "browserslist": [
     "> 1%"
