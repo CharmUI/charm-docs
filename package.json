@@ -10,6 +10,7 @@
     "build:docs": "NODE_ENV=production webpack --config config/webpack-docs.config.js"
   },
   "dependencies": {
+    "charm-ui": "^0.5.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",

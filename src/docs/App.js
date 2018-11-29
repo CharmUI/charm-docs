@@ -9,7 +9,7 @@ import {
   Aside,
   Nav,
   List,
-} from 'Layout';
+} from 'charm-ui/dist/esm/layout';
 
 import Package from 'Root/package.json';
 

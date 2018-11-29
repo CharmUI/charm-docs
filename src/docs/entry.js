@@ -1,6 +1,6 @@
+import 'charm-ui/dist/charm.tagged.css';
 import 'highlight.js/styles/tomorrow-night.css';
 import './css/all.css';
-import 'Tags/all.css';
 
 import 'Static/images/1.jpg';
 
