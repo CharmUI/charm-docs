@@ -12,7 +12,7 @@
     "postbuild": "mv public docs/"
   },
   "dependencies": {
-    "charm-ui": "^0.6.4",
+    "charm-ui": "^0.7.0",
     "gatsby": "^2.0.33",
     "highlight.js": "^9.13.1",
     "react": "^16.6.3",
