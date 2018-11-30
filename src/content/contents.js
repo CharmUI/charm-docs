@@ -30,6 +30,20 @@ const contents = [
     path: '/about/',
     name: 'About',
     lastUpdate: '22th November',
+    content: [
+      {
+        bullet: '1.1',
+        path: '/about/#try-react',
+        name: 'Try React',
+        content: [
+          {
+            bullet: '1.1.1',
+            path: '/about/#more-on-react',
+            name: 'More on react',
+          },
+        ],
+      },
+    ],
   },
 ];
 

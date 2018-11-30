@@ -1,6 +1,6 @@
 {
   "name": "charm-docs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Docs for Charm UI Framework",
   "author": "Nursultan Berkimbay",
   "license": "MIT",
@@ -9,10 +9,10 @@
     "start": "npm run develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
-    "postbuild": "rm -r docs/ && mv public docs/"
+    "postbuild": "mv public docs/"
   },
   "dependencies": {
-    "charm-ui": "^0.7.2",
+    "charm-ui": "^0.7.5",
     "gatsby": "^2.0.33",
     "highlight.js": "^9.13.1",
     "react": "^16.6.3",
