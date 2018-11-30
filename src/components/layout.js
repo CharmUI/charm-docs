@@ -67,7 +67,6 @@ class App extends Component {
           }}
           navProps={{
             title: currentRoute.name,
-            lastUpdate: currentRoute.lastUpdate,
             version: '0.5.5',
             onButtonClick: this.toggleAside,
             buttonName: 'Menu'
