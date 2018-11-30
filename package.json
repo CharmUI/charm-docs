@@ -9,10 +9,10 @@
     "start": "npm run develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
-    "postbuild": "mv public docs/"
+    "postbuild": "rm -r docs/ && mv public docs/"
   },
   "dependencies": {
-    "charm-ui": "^0.7.1",
+    "charm-ui": "^0.7.2",
     "gatsby": "^2.0.33",
     "highlight.js": "^9.13.1",
     "react": "^16.6.3",
