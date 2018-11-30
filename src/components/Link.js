@@ -7,13 +7,15 @@ function MainLink({
   name,
   exact,
   className,
+  onClick,
 }) {
   return (
     <Link
       to={path}
-      exact={exact || false}
+      exact={exact.toString()}
       className={ `link_main ${className}` }
       activeClassName="is-active"
+      onClick={onClick}
     >
       { name }
     </Link>
@@ -25,6 +27,7 @@ MainLink.defaultProps = {
   name: null,
   exact: false,
   className:'',
+  onClick: () => {},
 };
 
 MainLink.propTypes = {
@@ -32,6 +35,7 @@ MainLink.propTypes = {
   name: PropTypes.string,
   exact: PropTypes.bool,
   className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default memo(MainLink);
