@@ -1,10 +1,9 @@
 const contents = [
   {
     bullet: '1',
-    path: '/',
     exact: true,
+    path: '/',
     name: 'Getting started',
-    lastUpdate: '20th November',
     content: [
       {
         bullet: '1.1',
@@ -29,7 +28,6 @@ const contents = [
     bullet: '2',
     path: '/about/',
     name: 'About',
-    lastUpdate: '22th November',
     content: [
       {
         bullet: '1.1',
