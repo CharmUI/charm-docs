@@ -45,7 +45,14 @@ if (typeof window !== 'undefined') {
 class App extends Component {
   state = {
     showAside: false,
-    theme: (storage && storage.getItem('theme')) || 'light',
+    theme: (storage && storage.getItem('theme')) || 'Light',
+  }
+
+  componentDidMount() {
+    console.log(this.state.theme)
+    if (this.state.theme === 'Dark') {
+      this.setDarkTheme();
+    }
   }
 
   toggleAside = () => {
@@ -53,38 +60,46 @@ class App extends Component {
   }
 
   toggleTheme = () => {
-    if (storage.getItem('theme') === 'light') {
-      this.setState({ 'theme': 'dark' });
-      storage.setItem('theme', 'dark');
-
-      document.documentElement.style.setProperty('--color-fontBlack', 'rgba(255, 255, 255, 1)');
-      document.documentElement.style.setProperty('--color-fontMain', 'rgba(247, 247, 247, 1)');
-      document.documentElement.style.setProperty('--color-bgMain', 'rgba(32, 32, 32, 1)');
-      document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(32, 32, 32, 1)');
-      document.documentElement.style.setProperty('--color-bgYellow', 'rgba(45, 45, 45, 1)');
-      document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(170, 170, 170, 1)');
-      document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(170, 170, 170, 0.7)');
-      document.documentElement.style.setProperty('--color-blue', 'rgba(74, 144, 226, 1)');
-      document.documentElement.style.setProperty('--color-blue-20', 'rgba(74, 144, 226, 0.2)');
+    if (this.state.theme === 'Light') {
+      this.setState({ 'theme': 'Dark' });
+      storage.setItem('theme', 'Dark');
+      this.setDarkTheme();
     } else {
-      this.setState({ 'theme': 'light' });
-      storage.setItem('theme', 'light');
-
-      document.documentElement.style.setProperty('--color-fontBlack', 'rgba(33, 33, 33, 1)');
-      document.documentElement.style.setProperty('--color-fontMain', 'rgba(51, 51, 51, 1)');
-      document.documentElement.style.setProperty('--color-bgMain', 'rgba(253, 253, 253, 1)');
-      document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(253, 253, 253, 0.99)');
-      document.documentElement.style.setProperty('--color-bgYellow', 'rgba(255, 224, 102, 0.1)');
-      document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(74, 74, 74, 1)');
-      document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(74, 74, 74, 0.7)');
-      document.documentElement.style.setProperty('--color-blue', 'rgba(0, 82, 155, 1)');
-      document.documentElement.style.setProperty('--color-blue-20', 'rgba(0, 82, 155, 0.7)');
+      this.setState({ 'theme': 'Light' });
+      storage.setItem('theme', 'Light');
+      this.setLightTheme();
     }
+  }
+
+  setDarkTheme = () => {
+    document.documentElement.style.setProperty('--color-fontBlack', 'rgba(255, 255, 255, 1)');
+    document.documentElement.style.setProperty('--color-fontMain', 'rgba(210, 210, 210, 1)');
+    document.documentElement.style.setProperty('--color-bgMain', 'rgba(32, 32, 32, 1)');
+    document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(32, 32, 32, 1)');
+    document.documentElement.style.setProperty('--color-bgYellow', 'rgba(45, 45, 45, 1)');
+    document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(170, 170, 170, 1)');
+    document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(170, 170, 170, 0.7)');
+    document.documentElement.style.setProperty('--color-fontSecondary-light', 'rgba(100, 100, 100, 0.7)');
+    document.documentElement.style.setProperty('--color-blue', 'rgba(74, 144, 226, 1)');
+    document.documentElement.style.setProperty('--color-blue-20', 'rgba(74, 144, 226, 0.2)');
+  }
+
+  setLightTheme = () => {
+    document.documentElement.style.setProperty('--color-fontBlack', 'rgba(46, 46, 46, 1)');
+    document.documentElement.style.setProperty('--color-fontMain', 'rgba(51, 51, 51, 1)');
+    document.documentElement.style.setProperty('--color-bgMain', 'rgba(253, 253, 253, 1)');
+    document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(253, 253, 253, 0.99)');
+    document.documentElement.style.setProperty('--color-bgYellow', 'rgba(255, 224, 102, 0.1)');
+    document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(74, 74, 74, 1)');
+    document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(74, 74, 74, 0.7)');
+    document.documentElement.style.setProperty('--color-fontSecondary-light', 'rgba(155, 155, 155, 0.7)');
+    document.documentElement.style.setProperty('--color-blue', 'rgba(0, 82, 155, 1)');
+    document.documentElement.style.setProperty('--color-blue-20', 'rgba(0, 82, 155, 0.7)');
   }
 
   render() {
     const { children, location } = this.props;
-    const { showAside } = this.state;
+    const { showAside, theme } = this.state;
 
     const currentContentIndex = getCurrentContentIndex(contents, location);
     const currentRoute = getCurrentRoute(contents, location);
@@ -104,7 +119,7 @@ class App extends Component {
         name: currentRoute.name,
       },
       {
-        name: 'Dark',
+        name: theme === 'Light' ? 'Dark' : 'Light',
         type: 'button',
         onClick: this.toggleTheme,
       },
@@ -118,7 +133,7 @@ class App extends Component {
           asideProps={{
             logo: (<img
               style={{ maxWidth: 85 }}
-              src={(storage && storage.getItem('theme') === 'light') ? Logo : LogoLight}
+              src={(theme === 'Light') ? Logo : LogoLight}
               alt="logo" />
             ),
             isShown: showAside,
