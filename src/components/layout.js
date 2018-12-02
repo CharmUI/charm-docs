@@ -34,12 +34,18 @@ const rewritedComponents = {
   },
 };
 
-const storage = window.localStorage;
+let storage;
+let isDesktop;
+
+if (typeof window !== 'undefined') {
+  storage = window.localStorage;
+  isDesktop = window.matchMedia('(min-width: 576px)').matches;
+}
 
 class App extends Component {
   state = {
     showAside: false,
-    theme: storage.getItem('theme') || 'light',
+    theme: (storage && storage.getItem('theme')) || 'light',
   }
 
   toggleAside = () => {
@@ -77,10 +83,8 @@ class App extends Component {
   }
 
   render() {
-    const isDesktop = window.matchMedia('(min-width: 576px)').matches;
     const { children, location } = this.props;
     const { showAside } = this.state;
-    console.log(storage.getItem('theme'))
 
     const currentContentIndex = getCurrentContentIndex(contents, location);
     const currentRoute = getCurrentRoute(contents, location);
@@ -114,7 +118,7 @@ class App extends Component {
           asideProps={{
             logo: (<img
               style={{ maxWidth: 85 }}
-              src={storage.getItem('theme') === 'light' ? Logo : LogoLight}
+              src={(storage && storage.getItem('theme') === 'light') ? Logo : LogoLight}
               alt="logo" />
             ),
             isShown: showAside,
