@@ -3,7 +3,7 @@
   src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
        url('../static/fonts/Inter-UI.var.ttf') format('truetype');
   font-weight: 400;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' 400, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
@@ -13,7 +13,7 @@
   src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
        url('../static/fonts/Inter-UI.var.ttf') format('truetype');
   font-weight: 500;
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: 'wght' 500, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
@@ -23,7 +23,7 @@
   src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
        url('../static/fonts/Inter-UI.var.ttf') format('truetype');
   font-weight: 600;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: 'wght' 600, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
@@ -33,7 +33,7 @@
   src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
        url('../static/fonts/Inter-UI.var.ttf') format('truetype');
   font-weight: 700;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: 'wght' 700, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
