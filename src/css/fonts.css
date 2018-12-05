@@ -1,39 +1,49 @@
 @font-face {
   font-family: 'Inter UI';
-  src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
-       url('../static/fonts/Inter-UI.var.ttf') format('truetype');
+  src: url('../static/fonts/Inter-UI-Regular.woff2') format('woff2'),
+       url('../static/fonts/Inter-UI-Regular.woff2') format('woff'),
+       url('../static/fonts/Inter-UI-Regular.ttf') format('truetype');
   font-weight: 400;
-  font-variation-settings: 'wght' 400, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter UI';
-  src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
-       url('../static/fonts/Inter-UI.var.ttf') format('truetype');
+  src: url('../static/fonts/Inter-UI-Italic.woff2') format('woff2'),
+       url('../static/fonts/Inter-UI-Italic.woff2') format('woff'),
+       url('../static/fonts/Inter-UI-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  src: url('../static/fonts/Inter-UI-Medium.woff2') format('woff2'),
+       url('../static/fonts/Inter-UI-Medium.woff2') format('woff'),
+       url('../static/fonts/Inter-UI-Medium.ttf') format('truetype');
   font-weight: 500;
-  font-variation-settings: 'wght' 500, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter UI';
-  src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
-       url('../static/fonts/Inter-UI.var.ttf') format('truetype');
+  src: url('../static/fonts/Inter-UI-SemiBold.woff2') format('woff2'),
+       url('../static/fonts/Inter-UI-SemiBold.woff2') format('woff'),
+       url('../static/fonts/Inter-UI-SemiBold.ttf') format('truetype');
   font-weight: 600;
-  font-variation-settings: 'wght' 600, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter UI';
-  src: url('../static/fonts/Inter-UI.var.woff2') format('woff2-variations'),
-       url('../static/fonts/Inter-UI.var.ttf') format('truetype');
+  src: url('../static/fonts/Inter-UI-Bold.woff2') format('woff2'),
+       url('../static/fonts/Inter-UI-Bold.woff2') format('woff'),
+       url('../static/fonts/Inter-UI-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-variation-settings: 'wght' 700, 'slnt' 0,  'ital' 0;
   font-style: normal;
   font-display: swap;
 }
