@@ -4,6 +4,7 @@ const contents = [
     exact: true,
     path: '/',
     name: 'Getting started',
+    description: 'This page is an overview of the React documentation and related resources.',
     content: [
       {
         bullet: '1.1',
@@ -28,6 +29,7 @@ const contents = [
     bullet: '2',
     path: '/about/',
     name: 'About',
+    description: 'Other lead',
     content: [
       {
         bullet: '1.1',
