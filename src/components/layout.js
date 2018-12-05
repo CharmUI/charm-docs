@@ -133,7 +133,7 @@ class App extends Component {
           asideProps={{
             logo: (<img
               style={{ maxWidth: 85 }}
-              src={(storage.getItem('theme') === 'Light') ? Logo : LogoLight}
+              src={(storage && storage.getItem('theme') === 'Light') ? Logo : LogoLight}
               alt="logo" />
             ),
             isShown: showAside,
