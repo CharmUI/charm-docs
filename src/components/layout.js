@@ -49,7 +49,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.theme)
     if (this.state.theme === 'Dark') {
       this.setDarkTheme();
     }
@@ -131,11 +130,19 @@ class App extends Component {
       >
         <Layout
           asideProps={{
-            logo: (<img
-              style={{ maxWidth: 85 }}
-              src={(storage && storage.getItem('theme') === 'Light') ? Logo : LogoLight}
-              alt="logo" />
-            ),
+            logo: theme === 'Light'
+              ? (
+                <img
+                style={{ maxWidth: 85 }}
+                src={Logo}
+                alt="logo" />
+              )
+              : (
+                <img
+                style={{ maxWidth: 85 }}
+                src={LogoLight}
+                alt="logo" />
+              ),
             isShown: showAside,
             listProps: {
               LinkComponent: Link,
