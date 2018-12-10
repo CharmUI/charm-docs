@@ -71,7 +71,6 @@ class App extends Component {
         ? undefined
         : {
           name: 'Menu',
-          className: 'text--blue',
           type: 'button',
           onClick: this.toggleAside,
         },

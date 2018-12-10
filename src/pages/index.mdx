@@ -1,19 +1,29 @@
 # Getting started
 
 ---
-Get started with Charm UI library 
-
-## Introduction
-
-Charm UI - is a minimalistic CSS and JS libary for creating simple but beautiful documentation or blog web-sites. It's developed to be used with mdx and Inter UI font families.
+Charm UI - is a minimalistic CSS and JS libary for creating simple and beautiful documentation or blog websites. It's developed to be used with **MDX** and **InterUI** font families.
 
 ### Installation
-Charm UI can be downloaded through `npm`:
+Charm can be downloaded through **npm**:
 
 ```js
 npm i charm-ui -S
+```
 
+Next, you would like to import global css files to your project:
+
+```js
+// Use tagged css version
 import 'charm-ui/dist/charm.tagged.css';
+
+// Use classed css version
+import 'charm-ui/dist/charm.classed.css';
+```
+
+Or simply linking css file in your browser:
+
+```html
+<link rel="stylesheet" href="path/to/charm-ui/dist/charm.tagged.css">
 ```
 
 ### CSS
@@ -22,10 +32,9 @@ Charm CSS library consist of two different versions:
 * If you prefer to **use html tags**, start with `charm.tagged` css library.
 * If you prefer to **use css classes**, you can use `charm.classed` css.
 
-With components - you also got utility classes and minimal components. Most of times you can only drop tagged version of Charm and use it with static site generator - like Gatsby JS. 
+With any of this versions you will also get minimal CSS resets, **Utility classes** and some **Layout components** for better presentation. Most of times you can just drop tagged version of Charm and write plain html or **MDX**. You can also use static site generators like **GatsbyJS**. Read more about usage with static site generators on [Usage page](/usage/ "Usage").
 
-> Read more about usage with static site generators in another part
+> Charm is only a minimal UI presentation of your website. You can extend, update or change and use CharmUI the way you want
 
 ### JS
-Charm also contains some basic JS layout components that can be used with React.
-
+Charm also contains some basic JS layout components that can be used within React. You can read more about React components on [Components page](/components/ "Components").

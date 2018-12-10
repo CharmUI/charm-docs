@@ -8,25 +8,18 @@ const contents = [
     content: [
       {
         bullet: '1.1',
-        path: '/#introduction',
-        name: 'Introduction',
-        content: [
-          {
-            bullet: '1.1.1',
-            path: '/#installation',
-            name: 'Installation',
-          },
-          {
-            bullet: '1.1.2',
-            path: '/#css',
-            name: 'CSS',
-          },
-          {
-            bullet: '1.1.3',
-            path: '/#js',
-            name: 'JS',
-          },
-        ],
+        path: '/#installation',
+        name: 'Installation',
+      },
+      {
+        bullet: '1.2',
+        path: '/#css',
+        name: 'CSS',
+      },
+      {
+        bullet: '1.3',
+        path: '/#js',
+        name: 'JS',
       },
     ],
   },
