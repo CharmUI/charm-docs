@@ -8,22 +8,42 @@ function getPath(location) {
     : location.pathname.split('/charm-docs')[1];
 }
 
+function isSamePath(location, path, hash) {
+  if (location === path) {
+    return true;
+  }
+
+  if (hash !== '') {
+    return path.includes(hash);
+  }
+
+  if (path === '/') {
+    return location === path;
+  }
+
+  return location.includes(path);
+}
+
 export function getUpdatedContent(contents, location) {
   return contents.map(content => Object.assign({}, content, {
-    isCurrentPath: getPath(location) === content.path,
-  }));
+    isCurrentPath: isSamePath(getPath(location), content.path, location.hash),
+  }, content.content
+    ? { content: getUpdatedContent(content.content, location) }
+    : { content: content.content }
+  ));
 }
 
 export function getCurrentRoute(contents, location) {
   return contents.reduce((acc, content) => {
-    if (content.path === getPath(location)) return Object.assign({}, acc, content);
+    if (getPath(location) === content.path) return Object.assign({}, acc, content);
+    else if (content.content) return Object.assign({}, acc, getCurrentRoute(content.content, location));
     return acc;
   }, {});
 }
 
 export function getCurrentContentIndex(contents, location) {
   return contents.reduce((acc, content, i) => {
-    if (content.path === getPath(location)) return i;
+    if (getPath(location) === content.path) return i;
     return acc;
   }, null);
 }

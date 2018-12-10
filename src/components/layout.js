@@ -92,7 +92,7 @@ class App extends Component {
         <Layout
           asideProps={{
             logo: (<img
-              style={{ maxWidth: 85 }}
+              style={{ maxWidth: 60 }}
               src={Logo}
               alt="logo" />
             ),
