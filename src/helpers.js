@@ -41,11 +41,28 @@ export function getCurrentRoute(contents, location) {
   }, {});
 }
 
-export function getCurrentContentIndex(contents, location) {
-  return contents.reduce((acc, content, i) => {
-    if (getPath(location) === content.path) return i;
+export function createContentStructure(contents, prevIndex = -1) {
+  return contents.map((item, index, list) =>
+    Object.assign({}, item, {
+      bullet: prevIndex >= 0 ? `${prevIndex}.${index}` : `${index}`,
+    }, item.content
+        ? { content: createContentStructure(item.content, prevIndex >= 0 ? `${prevIndex}.${index}` : `${index}`) }
+        : {})
+  )
+}
+
+export function getRoute(contents, bullet, isPrev) {
+  return contents.reduce((acc, item, index) => {
+    if (item.bullet === bullet && (contents[index + 1] || contents[index - 1])) {
+      acc = isPrev ? contents[index - 1] : contents[index + 1];
+    }
+
+    if (item.content && !acc) {
+      return getRoute(item.content, bullet, isPrev);
+    }
+
     return acc;
-  }, null);
+  }, null)
 }
 
 export function setDarkTheme() {

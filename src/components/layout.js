@@ -15,10 +15,11 @@ import contents from '../content/contents';
 import {
   getUpdatedContent,
   getCurrentRoute,
-  getCurrentContentIndex,
   setDarkTheme,
   setLightTheme,
   getRewritedComponents,
+  createContentStructure,
+  getRoute,
 } from '../helpers';
 
 let storage;
@@ -61,12 +62,12 @@ class App extends Component {
     const { children, location } = this.props;
     const { showAside, theme } = this.state;
 
-    const currentContentIndex = getCurrentContentIndex(contents, location);
-    const currentRoute = getCurrentRoute(contents, location);
-    const prevRoute = contents[currentContentIndex - 1];
-    const nextRoute = contents[currentContentIndex + 1];
+    const content = createContentStructure(contents);
+    const currentRoute = getCurrentRoute(content, location);
+    const nextRoute = getRoute(content, currentRoute.bullet, false);
+    const prevRoute = getRoute(content, currentRoute.bullet, true);
 
-    const content = [
+    const navContent = [
       isDesktop
         ? undefined
         : {
@@ -98,12 +99,12 @@ class App extends Component {
             isShown: showAside,
             listProps: {
               LinkComponent: Link,
-              listContents: getUpdatedContent(contents, location),
+              listContents: getUpdatedContent(content, location),
               onLinkClick: this.toggleAside,
             }
           }}
           navProps={{
-            content: content.filter(item => item),
+            content: navContent.filter(item => item),
           }}
           footerProps={{
             nextRoute: nextRoute,
