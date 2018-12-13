@@ -6,9 +6,11 @@ import { MDXProvider } from "@mdx-js/tag";
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
-import { Layout } from 'charm-ui/dist/esm/layout';
+import { Layout, Aside, Nav } from 'charm-ui/dist/esm/layout';
 
 import Link from './Link';
+import List from './List';
+import Footer from './Footer';
 import Logo from '../static/logo.png';
 import contents from '../content/contents';
 
@@ -70,19 +72,25 @@ class App extends Component {
     const navContent = [
       isDesktop
         ? undefined
-        : {
-          name: 'Menu',
-          type: 'button',
-          onClick: this.toggleAside,
-        },
-      {
-        name: currentRoute.name,
-      },
-      {
-        name: theme === 'Light' ? 'Dark' : 'Light',
-        type: 'button',
-        onClick: this.toggleTheme,
-      },
+        : (
+          <button
+            type="button"
+            className="button text--small"
+            onClick={this.toggleAside}
+          >
+            <small className="small">Menu</small>
+          </button>
+        ),
+      ( <small className="small">{ currentRoute.name }</small> ),
+      (
+        <button
+          type="button"
+          className="button text--small"
+          onClick={this.toggleTheme}
+        >
+          <small className="small">{ theme === 'Light' ? 'Dark' : 'Light' }</small>
+        </button>
+      ),
     ];
 
     return (
@@ -90,27 +98,34 @@ class App extends Component {
         components={getRewritedComponents(currentRoute.description)}  
       >
         <Layout
-          asideProps={{
-            logo: (<img
-              style={{ maxWidth: 60 }}
-              src={Logo}
-              alt="logo" />
-            ),
-            isShown: showAside,
-            listProps: {
-              LinkComponent: Link,
-              listContents: getUpdatedContent(content, location),
-              onLinkClick: this.toggleAside,
-            }
-          }}
-          navProps={{
-            content: navContent.filter(item => item),
-          }}
-          footerProps={{
-            nextRoute: nextRoute,
-            prevRoute: prevRoute,
-            onFooterLinkClick: path => navigate(path),
-          }}
+          isAsideShown={showAside}
+          aside={(
+            <Aside
+              logo={(
+                <img
+                  style={{ maxWidth: 60 }}
+                  src={Logo}
+                  alt="logo"
+                />
+              )}
+            >
+              <List
+                LinkComponent={ Link }
+                listContents={ getUpdatedContent(content, location) }
+                onLinkClick={ this.toggleAside }
+              />
+            </Aside>
+          )}
+          nav={(
+            <Nav content={ navContent.filter(item => item) } />
+          )}
+          footer={(
+            <Footer 
+              nextRoute={ nextRoute }
+              prevRoute={ prevRoute }
+              onFooterLinkClick={ path => navigate(path) }
+            />
+          )}
         >
           { children }
         </Layout>
