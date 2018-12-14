@@ -22,17 +22,14 @@ const contents = [
     ],
   },
   {
-    path: '/usage/',
-    name: 'Usage',
-    description: 'Learn how to use Charm with different libraries',
+    path: '/components/',
+    name: 'Components',
+    description: 'Learn how to use Charm UI',
     content: [
       {
-        path: '/usage/gatsby',
-        name: 'Gatsby JS',
-      },
-      {
-        path: '/usage/next',
-        name: 'Next JS',
+        path: '/components/typography',
+        name: 'Typography',
+        description: 'Typography components',
       },
     ],
   },

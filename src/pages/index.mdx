@@ -1,16 +1,26 @@
 # Getting started
 
 ---
-Charm UI - is a minimalistic CSS and React components libary for creating simple and beautiful documentation or blog websites. It's developed with **MDX** and **InterUI** font families in mind.
+Charm UI - is a minimalistic CSS and React components libary for creating simple and beautiful documentation or blog websites. It's developed with **MDX** and **InterUI** font family in mind.
 
 ## Installation
-Charm can be downloaded through **npm** or **yarn** and includes two version of CSS styles and React layout components:
+Charm can be downloaded through **npm** and includes two version of CSS styles and React layout components:
 
 ```js
 npm install charm-ui -S
 ```
 
-Next, you would like to import global css files to your project:
+Within the download you'll find the following directories and files:
+
+```text
+charm-ui/
+└── dist/
+    ├── charm.classed.css
+    └── charm.tagged.css
+```
+
+### CSS
+Charm CSS library consist of two different versions:
 
 ```js
 // Use tagged css version
@@ -26,13 +36,10 @@ Or simply linking css file in your browser:
 <link rel="stylesheet" href="path/to/charm-ui/dist/charm.tagged.css">
 ```
 
-### CSS
-Charm CSS library consist of two different versions:
-
 * If you prefer to **use html tags**, start with `charm.tagged` css library.
 * If you prefer to **use css classes**, you can use `charm.classed` css.
 
-With any of this versions you will also get minimal CSS resets, **Utility classes** and some **Layout components** for better presentation. Most of times you can just drop tagged version of Charm and write plain html or **MDX**. You can also use static site generators like **GatsbyJS**. Read more about usage with static site generators on [Usage page](/usage/ "Usage").
+With any of this versions you will also get minimal CSS resets, Utility classes and some Layout components for better presentation. Most of times you can just drop tagged version of Charm and write plain html or **MDX**. You can also use static site generators like **GatsbyJS**.
 
 > Charm is only a minimal UI presentation of your website. You can extend, update or change and use CharmUI the way you want
 

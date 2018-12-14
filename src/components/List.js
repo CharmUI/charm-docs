@@ -25,7 +25,7 @@ function List(props) {
               <LinkComponent
                 {...linkProps}
                 onClick={onLinkClick}
-                className={isInner ? 'link_small' : ''}
+                className={isInner ? 'link--small' : ''}
               />
             </li>
             { content && (isCurrentPath || isInner)
