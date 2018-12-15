@@ -75,7 +75,7 @@ class App extends Component {
         : (
           <button
             type="button"
-            className="button text--small"
+            className="button"
             onClick={this.toggleAside}
           >
             <small className="small">Menu</small>
@@ -85,7 +85,7 @@ class App extends Component {
       (
         <button
           type="button"
-          className="button text--small"
+          className="button"
           onClick={this.toggleTheme}
         >
           <small className="small">{ theme === 'Light' ? 'Dark' : 'Light' }</small>

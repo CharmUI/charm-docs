@@ -13,7 +13,7 @@ function MainLink({
     <Link
       to={path}
       exact={exact.toString()}
-      className={ `link--main ${className}` }
+      className={ `text--size--medium text--color--secondary--light text--weight--medium text--no-decoration ${className}` }
       activeClassName="is-active"
       onClick={onClick}
     >

@@ -99,7 +99,7 @@ export function getRewritedComponents(description) {
       return (
         <h1 {...props}>
           { children }
-          <p className="lead text--light margin-top--1">
+          <p className="lead text--color--light margin-top--1">
             { description }
           </p>
         </h1>

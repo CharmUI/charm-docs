@@ -16,7 +16,7 @@ function Footer({
           >
             Previous
             <br />
-            <span className="text--blue">
+            <span className="text--color--blue">
               —&nbsp;
               { prevRoute.name }
             </span>
@@ -34,7 +34,7 @@ function Footer({
           >
             Next
             <br />
-            <span className="text--blue">
+            <span className="text--color--blue">
               { nextRoute.name }
               &nbsp;—
             </span>

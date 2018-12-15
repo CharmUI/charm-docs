@@ -59,3 +59,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* active links */
+.is-active {
+  color: var(--color-fontSecondary) !important;
+}
