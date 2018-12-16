@@ -45,7 +45,7 @@
   text-align: left;
 
   background-color: transparent;
-  color: var(--color-fontSecondary-light);
+  color: var(--color-fontLight);
 }
 
 @media (min-width: 576px) {
