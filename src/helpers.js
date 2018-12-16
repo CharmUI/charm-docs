@@ -71,6 +71,7 @@ export function setDarkTheme() {
   document.documentElement.style.setProperty('--color-bgMain', 'rgba(32, 32, 32, 1)');
   document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(32, 32, 32, 1)');
   document.documentElement.style.setProperty('--color-bgYellow', 'rgba(45, 45, 45, 1)');
+  document.documentElement.style.setProperty('--color-bgCode', 'rgba(45, 45, 45, 1)');
   document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(170, 170, 170, 1)');
   document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(170, 170, 170, 0.7)');
   document.documentElement.style.setProperty('--color-fontSecondary-light', 'rgba(100, 100, 100, 0.7)');
@@ -84,6 +85,7 @@ export function setLightTheme() {
   document.documentElement.style.setProperty('--color-bgMain', 'rgba(253, 253, 253, 1)');
   document.documentElement.style.setProperty('--color-bgMain-99', 'rgba(253, 253, 253, 0.99)');
   document.documentElement.style.setProperty('--color-bgYellow', 'rgba(255, 224, 102, 0.1)');
+  document.documentElement.style.setProperty('--color-bgCode', 'rgba(40, 44, 52, 1)');
   document.documentElement.style.setProperty('--color-fontSecondary', 'rgba(74, 74, 74, 1)');
   document.documentElement.style.setProperty('--color-fontSecondary-70', 'rgba(74, 74, 74, 0.7)');
   document.documentElement.style.setProperty('--color-fontSecondary-light', 'rgba(155, 155, 155, 0.7)');
