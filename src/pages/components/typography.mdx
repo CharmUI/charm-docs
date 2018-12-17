@@ -1,53 +1,43 @@
+import Example from '../../components/Example'
+
 # Typography
 
 ---
 
 ### Headings
 
-```html
-<h1 class="h1">Heading</h1>
-<h2 class="h2">Heading</h1>
-<h3 class="h3">Heading</h1>
-```
+Heading h1 through h3 classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
+
+| Tags          | Class         | Markdown      |
+| ------------- | ------------- | ------------- |
+| `<h1></h1>`   | `class="h1"`  | `#`           |
+| `<h2></h2>`   | `class="h2"`  | `##`          |
+| `<h3></h3>`   | `class="h3"`  | `###`         |
 
 ### Paragraphs
 
-```html
-<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-```
-
-### Lead
-
-```html
-<span class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</span>
-```
+| Tags          | Class         | Markdown      |
+| ------------- | ------------- | ------------- |
+| `<p></p>`     | —             | —             |
 
 ### Inline text
 
-```html
-<a class="link" href="#">Links</a>
-<code class="code">Code</code>
-<strong class="strong">Links</strong>
-<em class="em">Links</em>
-<small class="small">Links</small>
-```
+| Tags                | Class             | Markdown                       |
+| ------------------- | ----------------- | ------------------------------ |
+| `<a></a>`           | `class="link"`    | \[Link name](/link/to "Link")  |
+| `<code></code>`     | `class="code"`    | \`code\`                       |
+| `<strong></strong>` | `class="strong"`  | \**strong\**                   |
+| `<em></em>`         | `class="em"`      | \*emphasis\*                   |
+| `<small></small>`   | `class="small"`   | —                              |
 
 ### Blockquotes
 
-```html
-<blockquote class="blockquote">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</blockquote>
-```
+| Tags                            | Class                            | Markdown                       |
+| ------------------------------- | -------------------------------- | ------------------------------ |
+| `<blockquote></blockquote>`     | `class="blockquote"`             | \> Blockquote text             |
 
 ### List
 
-```html
-<ul class="list">
-  <li>First item</li>
-  <li>
-    <ul class="list">
-      <li>First inner item</li>
-    </ul>
-  </li>
-  <li>Third item</li>
-</ul>
-```
+| Tags                            | Class                            | Markdown                       |
+| ------------------------------- | -------------------------------- | ------------------------------ |
+| `<ul><li></li></ul>`            | `class="list"`                   | \- Link item                   |
