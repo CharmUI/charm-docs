@@ -1,3 +1,4 @@
+import 'charm-ui/dist/charm.classed.css';
 import 'charm-ui/dist/charm.tagged.css';
 import 'highlight.js/styles/tomorrow-night.css';
 import '../css/all.css';

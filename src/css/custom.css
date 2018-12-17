@@ -9,16 +9,37 @@
   font-size: 13px;
   font-weight: 500;
   color: #fff;
-  background-color: rgba(40, 44, 52, 1);
   background-color: var(--color-bgCode);
+}
+
+.example {
+  display: block;
+  max-width: 594px;
+  padding: 22px 22px 22px 33px;
+  margin: 22px 0 -22px 0;
+  margin-left: -33px;
+  margin-right: -22px;
 }
 
 @media (min-width: 576px) {
   .hljs {
-      padding: 22px 22px;
-      margin-right: -22px;
-      margin-left: -22px;
-      border-radius: 2px;
+    padding: 22px;
+    margin-right: -22px;
+    margin-left: -22px;
+    border-radius: 2px;
+  }
+
+  .example {
+    padding: 22px;
+    margin-right: -22px;
+    margin-left: -22px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  .example + pre > .hljs {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
   }
 }
 
